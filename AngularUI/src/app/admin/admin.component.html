@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<div id="mySidenav" class="sidenav" [style.width.px]="sidenavwidth" [style.margin-left.px]="sidenavmargin">
+    <a class="closebtn" style="cursor:pointer" (click)="closeNav()">&times;</a>
+    <a routerLink="/Admin">Home</a>
+    <a routerLink="/Admin/Pending">Pending Accounts</a>
+    <a routerLink="/Admin/Transactions">Transactions</a>
+    <a (click)="logout()">Logout</a>
+  </div>
+  
+  <div id="main" [style.width.px]="mainwidth" [style.margin-left.px]="mainmargin">
+    <div id="banner">
+        <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; Welcome Admin</span>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+  

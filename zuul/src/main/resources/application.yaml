@@ -1,0 +1,38 @@
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+ribbon:
+  ReadTimeout: 60000
+  connection-timeout: 3000
+  eureka:
+    enabled: true
+zuul:
+  routes:
+    account-details:
+      path: /accounts/**
+      serviceId: ACCOUNT-DETAILS
+    fund-transfer:
+      path: /fundtransfer/**
+      serviceId: FUND-TRANSFER
+    user-details:
+      path: /User/**
+      servicId: USER-DETAILS
+    transactions:
+      path: /transactions/**
+      serviceId: TRANSACTIONS-SERVICE
+    login:
+      path: /login/**
+      serviceId: LOGIN-SERVICE
+    ignoredServices: '*'
+    host:
+      time-to-live: -1
+      connect-timeout-millis: 5000
+      max-per-route-connections: 10000
+      max-total-connections: 5000
+      socket-timeout-millis: 60000
+    semaphore:
+      max-semaphores: 500

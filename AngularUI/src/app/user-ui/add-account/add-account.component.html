@@ -1,0 +1,41 @@
+
+<div class="container">
+
+        <div class="card" >
+            <div class="card-header">
+              Add Account
+            </div>
+            <div class="card-body">
+              
+              <form>
+                <div class="col">
+                    <div class="form-group">
+                    <label>Account No</label>
+                    <input type="number" [(ngModel)]='account.accountNo' [ngModelOptions]="{standalone: true}" [disabled]="true"  placeholder="Enter Account No" class="form-control .form-control-sm">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                      <label>Account Type</label>
+                      <select type="text" [(ngModel)]='account.accountType' [ngModelOptions]="{standalone: true}"  placeholder="Enter Account Type" class="form-control ">
+                        <option>Savings</option>
+                        <option>Current</option>
+                      </select> 
+                    </div>
+                  </div>
+              
+              <div class="col">
+                <div class="form-group">
+                  <label>Balance</label>
+                  <input type="text" [(ngModel)]='account.balance' [ngModelOptions]="{standalone: true}" placeholder="Enter Opening Balance" class="form-control .form-control-sm" >
+                </div>
+              </div>
+              
+                <button (click)='addAccount()' [disabled]="clicked" type="submit" class="btn btn-danger btn-block">Submit</button>
+                
+              </form>
+            </div>
+          </div>       
+</div>
+    
+

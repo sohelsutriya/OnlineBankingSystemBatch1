@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<div class="login-form">    
+  <form (ngSubmit)="addNewUser()">
+  <!-- <div class="avatar"><i class="material-icons">&#xE7FF;</i></div> -->
+    <h4 class="modal-title">Register</h4>
+    
+      <div class="form-group">
+
+        <div class="row"> 
+          <div class="col-xs-6">
+            <input type="text" class="form-control" name="fname" #fname="ngModel" [(ngModel)]='usr.fname' [ngModelOptions]="{standalone: true}" placeholder="FirstName" pattern="[a-zA-Z ]*" required="required">
+            <span *ngIf= '!fname.valid && fname.dirty && fname.touched'>
+              <p style="color: red">Invalid First Name</p>
+            </span>
+            <span *ngIf= '!fname.valid && !fname.untouched && fname.pristine'>
+              <p style="color: red">First Name cannot be empty</p>
+            </span>
+          </div>
+          <div class="col-xs-6">
+            <input type="text" class="form-control"  name="lname" #lname="ngModel" [(ngModel)]='usr.lname' [ngModelOptions]="{standalone: true}" placeholder="LastName" pattern="[a-zA-Z ]*" required="required">
+            <span *ngIf= '!lname.valid && lname.dirty && lname.touched'>
+              <p style="color: red">Invalid Last Name</p>
+            </span>
+            <span *ngIf= '!lname.valid && !lname.untouched && lname.pristine'>
+              <p style="color: red">Last Name cannot be empty</p>
+            </span>
+          </div>
+        </div>
+          
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="email" #email="ngModel" [(ngModel)]='usr.email' [ngModelOptions]="{standalone: true}" placeholder="Email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+        <span *ngIf= '!email.valid && email.dirty && email.touched'>
+          <p style="color: red">Invalid Email Id</p>
+        </span>
+        <span *ngIf= '!email.valid && !email.untouched && email.pristine'>
+          <p style="color: red">Email Id cannot be empty</p>
+        </span>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="mobileno" #mobileno="ngModel" [(ngModel)]='usr.mobile' [ngModelOptions]="{standalone: true}" placeholder="Mobile Number" pattern="^((\\+91-?)|0)?[0-9]{10}$" required>
+        <span *ngIf= '!mobileno.valid && mobileno.dirty && mobileno.touched'>
+          <p style="color: red">Invalid Mobile Number</p>
+        </span>
+        <span *ngIf= '!mobileno.valid && !mobileno.untouched && mobileno.pristine'>
+          <p style="color: red">Mobile Number cannot be empty</p>
+        </span>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="address" #address="ngModel" [(ngModel)]='usr.address' [ngModelOptions]="{standalone: true}" placeholder="Address" pattern="[a-zA-Z ]*" minlength="4" required="required">
+        <span *ngIf= '!address.valid && address.dirty && address.touched'>
+          <p style="color: red">Invalid Address</p>
+        </span>
+        <span *ngIf= '!address.valid && !address.untouched && address.pristine'>
+          <p style="color: red">Address cannot be empty</p>
+        </span>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="pannum" #pannum="ngModel" [(ngModel)]='usr.pan' [ngModelOptions]="{standalone: true}" placeholder="PAN Number" pattern="[A-Za-z]{5}[0-9]{4}[a-zA-Z]$" required="required">
+        <span *ngIf= '!pannum.valid && pannum.dirty && pannum.touched'>
+          <p style="color: red">Invalid Pancard Number</p>
+        </span>
+        <span *ngIf= '!pannum.valid && !pannum.untouched && pannum.pristine'>
+          <p style="color: red">Pancard Number cannot be empty</p>
+        </span>
+      </div>
+      <div class="form-group">
+          <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]='lc.password' [ngModelOptions]="{standalone: true}" placeholder="Password" minlength="4" required="required">
+          <span *ngIf= 'password.errors?.minlength'>
+            <p style="color: red"> Password must be at least 4 characters long.</p>
+          </span>
+          <span *ngIf= '!password.valid && !password.untouched && password.pristine'>
+            <p style="color: red">Password cannot be empty</p>
+          </span>
+        </div> 
+      
+      <input type="submit" class="btn btn-primary btn-block btn-lg" value="Register">              
+  </form>			
+  <div class="text-center small">Already have an account? <a href="http://localhost:4200">Sign In</a></div>

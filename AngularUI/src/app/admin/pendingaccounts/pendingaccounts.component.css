@@ -1,0 +1,12 @@
+.card-body{
+    padding: 0;
+}
+
+.table th.fit {
+    white-space: nowrap;
+    width: 8%;
+}
+
+td.fit{
+    text-align: center;
+}

@@ -1,0 +1,31 @@
+<div class="card" style="width: 100%;">
+    <div class="card-header">
+      All Transactions
+    </div>
+    <div class="card-body">
+    <table class="table table-hover table-bordered col-sm">
+      <thead class="thead-light">
+        <tr >
+          <th>Transaction Date</th>
+          <th>Account No</th>
+          <th>Amount</th>
+          <th>Transaction Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let tran of transactionList">
+          <td>{{tran.transactionDate}}</td>
+          <td>{{tran.accountNo}}</td>
+          <td>₹ {{tran.amount}}</td>
+          <td>{{tran.transactionType}}</td>
+
+          <!-- transactionId:number;
+          transactionType:string;
+          transactionDate:Date;
+          amount:number;
+          accountNo:string; -->
+        </tr>
+      </tbody>
+  </table>
+  </div>
+  </div>

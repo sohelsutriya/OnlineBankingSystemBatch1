@@ -1,0 +1,25 @@
+<div class="card" style="width: 100%;">
+    <div class="card-header">
+      My Accounts
+    </div>
+    <div class="card-body">
+    <table class="table table-hover table-bordered col-sm">
+      <thead class="thead-light">
+        <tr >
+          <th>Account No</th>
+          <th>Account Type</th>
+          <th>Balance</th>
+          <th class="fit">MiniStatement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let account of myAccountsList">
+          <td>{{account.accountNo}}</td>
+          <td>{{account.accountType}}</td>
+          <td>₹ {{account.balance}}</td>
+          <td class="fit"><i class="material-icons file_download" style="cursor: pointer;" (click)="export(account.accountNo)">&#xe2c4;</i></td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+</div>

@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="..//..//assets/styles_and_scripts/bootstrap.css"> -->
+
+<div class="login-form">    
+  <form (ngSubmit)="login()">
+  <div class="avatar"><i class="material-icons">&#xE7FF;</i></div>
+    <h4 class="modal-title">Login to Your Account</h4>
+      <div class="form-group">
+          <input type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]='lc.username' [ngModelOptions]="{standalone: true}" placeholder="Username" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="required">
+          <span *ngIf= '!username.valid && username.dirty && username.touched'>
+            <p style="color: red">Invalid Username</p>
+          </span>
+          <span *ngIf= '!username.valid && !username.untouched && username.pristine'>
+            <p style="color: red">Username cannot be empty</p>
+          </span>
+      </div>
+      <div class="form-group">
+          <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]='lc.password' [ngModelOptions]="{standalone: true}" placeholder="Password" minlength="4" required="required">
+          <span *ngIf= 'password.errors?.minlength'>
+            <p style="color: red"> Password must be at least 4 characters long.</p>
+          </span>
+          <span *ngIf= '!password.valid && !password.untouched && password.pristine'>
+            <p style="color: red">Password cannot be empty</p>
+          </span>
+        </div> 
+      <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">              
+  </form>			
+  <div class="text-center small">Don't have an account? <a href="http://localhost:4200/Register">Sign up</a></div>
+  

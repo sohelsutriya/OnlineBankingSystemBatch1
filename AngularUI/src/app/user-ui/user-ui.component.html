@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<div id="mySidenav" class="sidenav" [style.width.px]="sidenavwidth" [style.margin-left.px]="sidenavmargin">
+    <a class="closebtn" style="cursor:pointer" (click)="closeNav()">&times;</a>
+    <a routerLink="/BankUser/MyAccount"><span class="material-icons">home</span> Home</a>
+    <a routerLink="/BankUser/AddAccount"><span class="material-icons">account_balance_wallet</span> Add Account</a>
+    <a routerLink="/BankUser/Transfer"><span class="material-icons">swap_horizontal_circle</span> Transfer</a>
+    <a routerLink="/BankUser/Requests"><span class="material-icons">book</span> Request</a>
+    <a (click)="logout()"><span class="material-icons">exit_to_app</span> Logout</a>
+    
+  </div>
+  
+  <div id="main" [style.width.px]="mainwidth" [style.margin-left.px]="mainmargin">
+    <div id="banner">
+        <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; Welcome To Capgemini Bank</span>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+  

@@ -1,0 +1,25 @@
+ <div class="card">
+    <div class="card-header">Change Mobile Number</div>
+    <div class="card-body">
+        <div class="login-form">    
+            <form (ngSubmit)="changemobile()">
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]='mobile' [ngModelOptions]="{standalone: true}" placeholder="New Mobile" required="required">
+                </div>
+                <input type="submit" class="btn btn-danger btn-block btn-lg" value="Update">              
+        </form>	
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">Change Address</div>
+    <div class="card-body">
+        <div class="login-form">    
+            <form (ngSubmit)="changeaddress()">
+                <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]='address' [ngModelOptions]="{standalone: true}" placeholder="New Address" required="required">
+                </div>
+                <input type="submit" class="btn btn-danger btn-block btn-lg" value="Update">              
+        </form>
+    </div>
+</div>
+  

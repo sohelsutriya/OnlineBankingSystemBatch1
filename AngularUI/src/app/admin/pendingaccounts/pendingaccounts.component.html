@@ -1,0 +1,28 @@
+<div class="card" style="width: 100%;">
+    <div class="card-header">
+      Pending Accounts List
+    </div>
+    <div class="card-body">
+    <table class="table table-hover table-bordered col-sm">
+      <thead class="thead-light">
+        <tr >
+          <th>Account No</th>
+          <th>Account Type</th>
+          <th>Balance</th>
+          <th class="fit">Approve</th>
+          <th class="fit">Reject</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let account of pendingList">
+          <td>{{account.accountNo}}</td>
+          <td>{{account.accountType}}</td>
+          <td>₹ {{account.balance}}</td>
+          <td style="color:#5cb85c ; text-align: center;"><i class="material-icons cancel" style="cursor: pointer;" (click)="approve(account)">&#xe86c;</i></td>
+          <td style="color:#d9534f ; text-align: center;"><i class="material-icons cancel" style="cursor: pointer;" (click)="reject(account)">&#xe5c9;</i></td>
+          <!-- <td><button (click)="approve(account)">approve</button></td> -->
+        </tr>
+      </tbody>
+  </table>
+</div>
+</div>
